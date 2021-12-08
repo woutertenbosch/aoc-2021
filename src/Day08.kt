@@ -8,9 +8,7 @@ fun main() {
 
     fun part2(input: List<String>): Int {
         val digits = input.map {
-
             val s = it.split(" | ")
-
             s[0].split(" ").map { it.trim() } to s[1].split(" ").map { it.trim() }
         }
 
@@ -18,7 +16,6 @@ fun main() {
         val p = permutations(segments).toList().map { it.zip(segments).toMap() }.toList()
 
         val numbers = mapOf(
-
             "abcefg" to 0,
             "cf" to 1,
             "acdeg" to 2,
@@ -29,8 +26,7 @@ fun main() {
             "acf" to 7,
             "abcdefg" to 8,
             "abcdfg" to 9,
-
-            )
+        )
 
         var sum = 0
 
@@ -39,23 +35,14 @@ fun main() {
             val (inputs, outputs) = row
 
             for (permut in p) {
-                var possible = true
-                for (inputDigit in inputs) {
-
+                if (inputs.all { inputDigit ->
                     val convertedDigit = inputDigit.map { permut[it.toString()]!! }.sorted().joinToString("")
-                    val number = numbers[convertedDigit]
-                    if (number == null) possible = false
-                }
-
-                if (possible) {
-                    var finalN = ""
-                    for (outputDigit in outputs) {
-
+                    numbers.contains(convertedDigit)
+                })  {
+                    sum += outputs.map { outputDigit ->
                         val convertedDigit = outputDigit.map { permut[it.toString()]!! }.sorted().joinToString("")
-                        val number = numbers[convertedDigit]
-                        finalN += number
-                    }
-                    sum += finalN.toInt()
+                        numbers[convertedDigit]
+                    }.joinToString("").toInt()
                 }
             }
 
