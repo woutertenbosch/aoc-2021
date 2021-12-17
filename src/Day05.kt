@@ -2,7 +2,7 @@ fun main() {
     fun part1(input: List<String>): Int {
 
 
-        var board = (0..10000).map { x -> (0..10000).map { y -> 0 }.toMutableList() }.toMutableList()
+        var board = (0..10000).map { _ -> (0..10000).map { _ -> 0 }.toMutableList() }.toMutableList()
 
 
         input.forEach {
@@ -45,7 +45,7 @@ fun main() {
 
     fun part2(input: List<String>): Int {
 
-        var board = (0..10000).map { x -> (0..10000).map { y -> 0 }.toMutableList() }.toMutableList()
+        var board = (0..10000).map { _ -> (0..10000).map { _ -> 0 }.toMutableList() }.toMutableList()
 
 
         input.forEach {

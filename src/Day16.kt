@@ -82,7 +82,7 @@ fun main() {
         fun parsePacket(packetBits: String) : Pair<Long, String> {
             val packet = MutableString(packetBits)
 
-            val version = packet.parse(3)
+            packet.parse(3)
             val typeId = packet.parse(3).toInt()
             val operator = typeId != 4
 

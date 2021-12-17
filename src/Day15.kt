@@ -1,5 +1,4 @@
 import java.util.*
-import kotlin.Comparator
 
 fun main() {
     fun part1(input: List<String>): Int {
@@ -50,8 +49,8 @@ fun main() {
     fun part2(input: List<String>): Int {
         val baseGrid = input.map { it.map { it.toString().toInt() }.toMutableList() }
 
-        val grid = (0 until ((baseGrid.maxY() + 1) * 5)).map { y ->
-            (0 until ((baseGrid.maxX() + 1) * 5)).map { x ->
+        val grid = (0 until ((baseGrid.maxY() + 1) * 5)).map { _ ->
+            (0 until ((baseGrid.maxX() + 1) * 5)).map { _ ->
                 0
             }.toMutableList()
         }

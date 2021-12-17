@@ -3,9 +3,8 @@ fun main() {
         val grid = input.map { it.map { it.toString().toInt() }.toMutableList() }
 
         fun incSafeGrid(x: Int, y: Int) {
-            if ((0 until grid.size).contains(x) && (0 until grid[x].size).contains(y))
-                if (grid[x][y] > 0)
-                    grid[x][y]++
+            if ((0 until grid.size).contains(x) && (0 until grid[x].size).contains(y) && grid[x][y] > 0)
+                grid[x][y]++
         }
 
         fun getSafeGrid(x: Int, y: Int): Int? {
@@ -56,9 +55,8 @@ fun main() {
         val grid = input.map { it.map { it.toString().toInt() }.toMutableList() }
 
         fun incSafeGrid(x: Int, y: Int) {
-            if ((0 until grid.size).contains(x) && (0 until grid[x].size).contains(y))
-                if (grid[x][y] > 0)
-                    grid[x][y]++
+            if ((0 until grid.size).contains(x) && (0 until grid[x].size).contains(y) && grid[x][y] > 0)
+                grid[x][y]++
         }
 
         fun getSafeGrid(x: Int, y: Int): Int? {
